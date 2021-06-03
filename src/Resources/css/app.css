@@ -15,6 +15,11 @@ a {
     color: inherit;
 }
 
+h1 {
+    color: #F00001;
+    margin-bottom: 2rem;
+}
+
 .link_logo {
     display: inline-block;
 }
