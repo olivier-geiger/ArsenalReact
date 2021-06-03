@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin:0;
     padding:0;
@@ -19,6 +25,10 @@ a {
 
 .bck_lblue {
     background: #98c5e9;
+}
+
+.bg_blue {
+    background: #151C2D;
 }
 
 .img_cover {

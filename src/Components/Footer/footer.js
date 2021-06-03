@@ -5,7 +5,7 @@ import { ArsenalLogo } from '../Utils/utils';
 
 const Footer = () => {
   return (
-    <footer className="bck_blue">
+    <footer className="bg_blue">
       <div className="footer_logo">
         <ArsenalLogo
           link={true}
