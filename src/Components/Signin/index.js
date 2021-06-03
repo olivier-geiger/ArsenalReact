@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {  TextField} from '@material-ui/core'
-import { CircularProgress } from '@material-ui/core';
-import { Redirect } from 'react-router-dom';
+// import {  TextField} from '@material-ui/core'
+// import { CircularProgress } from '@material-ui/core';
+// import { Redirect } from 'react-router-dom';
 import { Slide, Zoom } from 'react-awesome-reveal';
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
@@ -27,6 +27,10 @@ const Signin = () => {
     }
   });
 
+  const handleSumbit = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div className="container">
       <div className="signin_wrapper" style={{margin: '300px'}}>
@@ -35,7 +39,7 @@ const Signin = () => {
       </Zoom>
 
       <Slide left > 
-        <form onSubmit={formik.handleSumbit}>
+        <form onSubmit={handleSumbit}>
         <input
           name="email"
           label="Email"
