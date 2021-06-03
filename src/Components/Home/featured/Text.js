@@ -1,6 +1,7 @@
 import React from 'react';
 import { easePolyOut } from 'd3-ease';
 import  { Animate } from 'react-move';
+import { Fade } from 'react-awesome-reveal';
 
 import FeaturedPlayer from '../../../Resources/images/players/pierre-emerick-aubameyang.webp'
 
@@ -91,6 +92,12 @@ const Text = () => {
 
 
     const animatePlayer = () => (
+
+        // <Fade rigth >
+        //     <div>
+        //         <img src={FeaturedPlayer} alt="" srcset="" />
+        //     </div>
+        // </Fade>
         <Animate
          show={true}
          start={{
