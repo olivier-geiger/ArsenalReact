@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-
+import { firebase } from '../../firebase';
+import { toast } from 'react-toastify';
 import { CircularProgress } from '@material-ui/core';
 // import { Redirect } from 'react-router-dom';
 import { Zoom, Slide } from 'react-awesome-reveal';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-const SignIn = () => {
+const SignIn = (props) => {
   const [loading, setLoading] = useState(false)
 
   const formik = useFormik({
@@ -24,9 +25,39 @@ const SignIn = () => {
     }),
     onSubmit: (values) => {
       setLoading(true)
-      console.log(values)
+      submitForm(values)
     }
   })
+
+  const submitForm = (values) => {
+    firebase.auth()
+    .signInWithEmailAndPassword(
+      values.email,
+      values.password
+    ).then(() => {
+      props.history.push('/dashboard')
+      toast.success(`🦄 Welcome! ${values.email}`, {
+        position: "top-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }).catch(err => {
+      setLoading(false)
+      toast.error('🦄 You are not registered!', {
+        position: "top-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    })
+  }
 
 
   return (
@@ -42,7 +73,7 @@ const SignIn = () => {
 
             <input
               name="email"
-              placeholder="Email"
+              placeholder="Enter your email"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
@@ -56,6 +87,7 @@ const SignIn = () => {
 
             <input
               name="password"
+              placeholder="Enter your password"
               type="password"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}

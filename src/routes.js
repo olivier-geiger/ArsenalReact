@@ -1,22 +1,27 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
-import Home from './Components/Home';
 import Header from './Components/Header/header';
 import Footer from './Components/Footer/footer';
-import Signin from './Components/Signin';
+import Home from './Components/Home';
+import SignIn from './Components/Signin';
 
-const Routes = () => {
+const Routes = ({user}) => {
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header user={user}/>
       <Switch>
-        <Route path="/login" exact component={Signin} />
-        <Route path="/" exact component={Home} />
+        <Route path="/sign_in" exact component={SignIn}/>
+        <Route path="/" exact component={Home}/>
       </Switch>
-      <Footer />
+      <ToastContainer />
+      <Footer/>
     </BrowserRouter>
   );
-};
+  
+}
 
 export default Routes;

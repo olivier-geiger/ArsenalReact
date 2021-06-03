@@ -712,35 +712,37 @@ footer .footer_discl {
     padding: 20px;
     min-height: 70VH;
     text-align: center;
-}
-
-.signin_wrapper form {
+  }
+  
+  .signin_wrapper form {
     width: 350px;
     margin: 0 auto;
-}
+  }
 
-.signin_wrapper form button {
+
+  
+  .signin_wrapper form button {
     width: 100%;
     padding: 10px;
-}
-
-.signin_wrapper h2 {
+  }
+  
+  .signin_wrapper h2 {
     font-family: 'Righteous', cursive;
     color: #F00001;
     font-size: 50px;
-}
-
-.user_dashboard {
+  }
+  
+  .user_dashboard {
     font-size: 60px;
     font-family: 'Righteous', cursive;
     color: #d5ebfe;
     text-align: center;
     margin-top: 200px;
-}
-
-.progress {
+  }
+  
+  .progress {
     height: 100VH;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
