@@ -30,25 +30,29 @@ const Signin = () => {
   return (
     <div className="container">
       <div className="signin_wrapper" style={{margin: '300px'}}>
-      
-        <h1>CONNEXION</h1>
-     
+
+      <h2>Please login</h2>
 
       <Slide left > 
         <form onSubmit={formik.handleSumbit}>
-        <TextField
-          id="email"
+        <input
           name="email"
           label="Email"
           value={formik.values.email}
-          />
-        <TextField
-          id="password"
+          placeholder="Enter your email"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        <input
           name="password"
           label="Password"
           type="password"
           value={formik.values.password}
-          />
+          placeholder="Enter your password"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        <button type="submit">Log in</button>
         </form>
 
       </Slide>
