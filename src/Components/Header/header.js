@@ -2,6 +2,8 @@ import React from 'react';
 import { AppBar, Toolbar, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
+import { ArsenalLogo } from '../Utils/utils';
+
 const Header = () => {
   return (
     <>
@@ -17,7 +19,12 @@ const Header = () => {
         <Toolbar style={{ display: 'flex' }}>
           <div style={{ flexGrow: 1}}>
             <div className="header_logo">
-              logo
+              <ArsenalLogo 
+                link={true}
+                linkTo={'/'}
+                width="90px"
+                height="90px"
+              />
             </div>
           </div>
 
