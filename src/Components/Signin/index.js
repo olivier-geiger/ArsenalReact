@@ -35,7 +35,7 @@ const SignIn = (props) => {
       values.email,
       values.password
     ).then(() => {
-      props.history.push('/dashboard')
+      props.history.push('/')
       toast.success(`🦄 Welcome! ${values.email}`, {
         position: "top-left",
         autoClose: 3000,
